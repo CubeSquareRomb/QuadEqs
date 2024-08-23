@@ -64,7 +64,7 @@ class IntEq {
                     maxRoot = 10
                 }
 
-                "advanced_classic" -> {
+                "advanced" -> {
                     minRoot = -10
                     maxRoot = 10
                     minA = -3
@@ -76,6 +76,30 @@ class IntEq {
                     maxRoot = 20
                     minA = -5
                     maxA = 5
+                }
+
+                "reduced_master_1" -> {
+                    minRoot = 1
+                    maxRoot = 30
+                }
+
+                "reduced_master_2" -> {
+                    minRoot = -30
+                    maxRoot = 30
+                }
+
+                "senior_1" -> {
+                    minRoot = 1
+                    maxRoot = 10
+                    minA = -10
+                    maxA = 10
+                }
+
+                "senior_2" -> {
+                    minRoot = -10
+                    maxRoot = 10
+                    minA = -10
+                    maxA = 10
                 }
             }
 
@@ -117,13 +141,13 @@ class IntEq {
 
             var formatted = ""
             if (eq.get(1) === 0 && eq.get(2) === 0) {
-                formatted = String.format("%sx2 = 0", stringA)
+                formatted = String.format("%sx² = 0", stringA)
             } else if (eq.get(1) === 0) {
-                formatted = String.format("%sx2 + %s = 0", stringA, stringC)
+                formatted = String.format("%sx² + %s = 0", stringA, stringC)
             } else if (eq.get(2) === 0) {
-                formatted = String.format("%sx2 + %sx = 0", stringA, stringB)
+                formatted = String.format("%sx² + %sx = 0", stringA, stringB)
             } else {
-                formatted = String.format("%sx2 + %sx + %s = 0", stringA, stringB, stringC)
+                formatted = String.format("%sx² + %sx + %s = 0", stringA, stringB, stringC)
             }
 
             return formatted.replace("+ -", "- ")

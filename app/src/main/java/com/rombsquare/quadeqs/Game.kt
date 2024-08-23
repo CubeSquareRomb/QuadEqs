@@ -141,4 +141,8 @@ class Game : AppCompatActivity() {
         intent.putExtra("solved", eq.solved)
         startActivity(intent)
     }
+
+    override fun onBackPressed() {
+
+    }
 }

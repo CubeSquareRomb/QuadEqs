@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        eq = IntEq("advanced_classic")
+        eq = IntEq("advanced")
 
         val button: Button = findViewById(R.id.btn_next)
         val eqText: TextView = findViewById(R.id.eq)

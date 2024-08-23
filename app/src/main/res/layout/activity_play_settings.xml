@@ -79,6 +79,7 @@
             android:id="@+id/diff_spin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -89,6 +90,7 @@
             android:layout_gravity="center_vertical"
             android:foregroundGravity="center_vertical"
             android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/diff_spin" />
 
@@ -98,7 +100,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="(descr)"
+            android:textAlignment="center"
             android:textSize="@dimen/smallerTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/time_spin" />
     </androidx.constraintlayout.widget.ConstraintLayout>

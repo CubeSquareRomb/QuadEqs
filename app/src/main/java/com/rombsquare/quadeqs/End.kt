@@ -37,6 +37,5 @@ class End : AppCompatActivity() {
 
     override fun onBackPressed() {
 
-
     }
 }

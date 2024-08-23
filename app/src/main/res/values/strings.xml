@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">QuadEqs</string>
+    <string name="play">Play</string>
+    <string name="custom">Custom</string>
+    <string name="check">Check</string>
+    <string name="max_root">Max root</string>
+    <string name="min_root">Min root</string>
+    <string name="home">Home</string>
+
+    <string name="descr_simple">Equations with positive roots</string>
+    <string name="descr_classic">Classic equations</string>
+    <string name="descr_advanced">Equations with senior coefficient</string>
+    <string name="descr_pro">Huge equations</string>
+    <string name="descr_growth">From easier equations to harder</string>
+</resources>

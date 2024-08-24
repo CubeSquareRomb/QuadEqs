@@ -9,6 +9,8 @@
     android:rotation="0"
     android:rotationX="0"
     android:rotationY="0"
+    android:resizeableActivity="false"
+    android:screenOrientation="portrait"
     tools:context=".PlaySettings">
 
     <Button
@@ -21,7 +23,6 @@
         android:backgroundTint="@color/btn"
         android:text="@string/custom"
         android:textSize="@dimen/BtnTextSize"
-        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/btn_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

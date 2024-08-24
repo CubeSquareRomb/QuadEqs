@@ -9,14 +9,12 @@ import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlin.time.times
 
 class Game : AppCompatActivity() {
     private var diff: String? = ""
@@ -54,7 +52,13 @@ class Game : AppCompatActivity() {
             maxA = extras.getInt("maxA")
             time = extras.getInt("time")
 
-            eq = IntEq(diff!!)
+            if (minX == null) {minX = -10}
+            if (maxX == null) {maxX = 10}
+            if (minA == null) {minA = 1}
+            if (maxA == null) {maxA = 1}
+            if (time == null) {time = 120}
+
+            eq = IntEq(diff!!, minX!!, maxX!!, minA!!, maxA!!)
 
 //            Toast.makeText(this, time.toString(), Toast.LENGTH_LONG).show()
         }
@@ -62,7 +66,7 @@ class Game : AppCompatActivity() {
         val btnClose: FloatingActionButton = findViewById(R.id.btn_close)
         val btnNext: Button = findViewById(R.id.btn_next)
         eqText = findViewById(R.id.eq)
-        solvedTimeText = findViewById(R.id.solvedtime)
+        solvedTimeText = findViewById(R.id.title)
         minX_Edit  = findViewById(R.id.minX)
         maxX_Edit  = findViewById(R.id.maxX)
 
@@ -82,6 +86,7 @@ class Game : AppCompatActivity() {
         timer.start()
 
         btnClose.setOnClickListener {
+            timer.cancel()
             end()
         }
 

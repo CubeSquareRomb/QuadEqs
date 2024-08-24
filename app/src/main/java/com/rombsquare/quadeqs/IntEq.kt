@@ -7,8 +7,19 @@ class IntEq {
     var roots = listOf<Int>()
     var eq = listOf<Int>()
 
-    constructor(diff: String) {
+    var minX: Int = 0
+    var maxX: Int = 0
+    var minA: Int = 0
+    var maxA: Int = 0
+
+
+    constructor(diff: String, minX: Int = 0, maxX: Int = 0, minA: Int = 0, maxA: Int = 0) {
         this.diff = diff
+
+        this.minX = minX
+        this.maxX = maxX
+        this.minA = minA
+        this.maxA = maxA
 
         next()
     }
@@ -156,6 +167,10 @@ class IntEq {
 
     }
 
+    fun genCustom(): List<List<Int>> {
+        return randomIqeq(minX, maxX, minA, maxA)
+    }
+
     fun next(userRoots: List<Int> = emptyList()): Int {
         if (solved != -1 && userRoots != roots.sorted() && userRoots != emptyList<Int>()) {
             return -1
@@ -165,7 +180,8 @@ class IntEq {
 
         if (diff == "growth") {
             eqroots = genIqeqGrowth(solved)
-
+        } else if (diff == "custom") {
+            eqroots = genCustom()
         } else {
             eqroots = genIqeqByDiff(diff)
         }

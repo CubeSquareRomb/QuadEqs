@@ -83,34 +83,20 @@ class IntEq {
                 }
 
                 "pro" -> {
-                    minRoot = -20
-                    maxRoot = 20
-                    minA = -5
-                    maxA = 5
-                }
-
-                "reduced_master_1" -> {
-                    minRoot = 1
-                    maxRoot = 30
-                }
-
-                "reduced_master_2" -> {
-                    minRoot = -30
-                    maxRoot = 30
-                }
-
-                "senior_1" -> {
-                    minRoot = 1
-                    maxRoot = 10
-                    minA = -10
-                    maxA = 10
-                }
-
-                "senior_2" -> {
                     minRoot = -10
                     maxRoot = 10
                     minA = -10
                     maxA = 10
+                }
+
+                "reduced_master_1" -> {
+                    minRoot = 1
+                    maxRoot = 20
+                }
+
+                "reduced_master_2" -> {
+                    minRoot = -20
+                    maxRoot = 20
                 }
             }
 
@@ -124,9 +110,9 @@ class IntEq {
             var minA = 1
             var maxA = 1
 
-            if (solved >= 10) {
-                minA = -1 - (solved-10)/20
-                maxA = 1 + (solved-10)/20
+            if (solved >= 5) {
+                minA = -1 - (solved-5)/5
+                maxA = 1 + (solved-5)/5
             }
 
             return randomIqeq(minX, maxX, minA, maxA)

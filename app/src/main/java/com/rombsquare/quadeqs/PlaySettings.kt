@@ -32,7 +32,7 @@ class PlaySettings : AppCompatActivity() {
             insets
         }
 
-        val diffs = listOf("Simple", "Classic", "Advanced", "Pro", "Reduced Master 1", "Reduced Master 2", "Senior 1", "Senior 2", "Growth")
+        val diffs = listOf("Simple", "Classic", "Advanced", "Pro", "Reduced Master 1", "Reduced Master 2", "Growth")
         val times = listOf("30s", "1m", "2m", "5m", "10m")
 
         val diff_adapter = ArrayAdapter(this, R.layout.spinner_item, diffs)

@@ -10,11 +10,9 @@
     <string name="descr_simple">Equations with positive roots. Root range: [1, 10]</string>
     <string name="descr_classic">Classic equations. Root range: [-10, 10]</string>
     <string name="descr_advanced">Equations with senior coefficient. Root range: [-10, 10], senior coeff range: [-3, 3]</string>
-    <string name="descr_pro">Huge equations. Root range: [-20, 20], senior coeff range: [-5, 5]</string>
-    <string name="descr_reduced_master_1">Reduced equations with positive roots but huge numbers. Root range: [1, 30]</string>
-    <string name="descr_reduced_master_2">Reduced equations with positive and negative roots but huge numbers. Root range: [-30, 30]</string>
-    <string name="descr_senior_1">Classic equation with positive roots but huge senior coeff. Root range: [1, 10], senior coeff range: [-10, 10]</string>
-    <string name="descr_senior_2">Classic equation but huge senior coeff. Root and senior coeff range: [-10, 10]</string>
+    <string name="descr_pro">Huge equations. Root range: [-10, 10], senior coeff range: [-10, 10]</string>
+    <string name="descr_reduced_master_1">Reduced equations with positive roots but huge numbers. Root range: [1, 20]</string>
+    <string name="descr_reduced_master_2">Reduced equations with positive and negative roots but huge numbers. Root range: [-20, 20]</string>
 
     <string name="descr_growth">From easier equations to harder</string>
     <string name="math_game">Math Game</string>

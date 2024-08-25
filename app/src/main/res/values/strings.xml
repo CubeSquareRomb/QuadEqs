@@ -19,4 +19,5 @@
     <string name="min">Min</string>
     <string name="max">Max</string>
     <string name="a_range">\"A\" coeff range</string>
+    <string name="tutorial">Tutorial</string>
 </resources>

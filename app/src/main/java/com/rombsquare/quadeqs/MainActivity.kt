@@ -30,10 +30,16 @@ class MainActivity : AppCompatActivity() {
 
         eq = IntEq("advanced")
 
-        val button: Button = findViewById(R.id.btn_next)
+        val button1: Button = findViewById(R.id.btn_next)
+        val button2: Button = findViewById(R.id.btn_tut)
         val eqText: TextView = findViewById(R.id.eq)
-        button.setOnClickListener {
+        button1.setOnClickListener {
             val intent = Intent(this, PlaySettings::class.java)
+            startActivity(intent)
+        }
+
+        button2.setOnClickListener {
+            val intent = Intent(this, Tutorial::class.java)
             startActivity(intent)
         }
 

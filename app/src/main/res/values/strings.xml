@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Equadrat</string>
+    <string name="app_name" translatable="false">Equadratic</string>
     <string name="play">Play</string>
     <string name="custom">Custom</string>
     <string name="check">Check</string>

@@ -14,15 +14,15 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="(solved) (time)"
-        android:textSize="@dimen/textSize"
         android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/textSize"
         app:layout_constraintBottom_toBottomOf="@+id/btn_close"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/btn_close" />
 
     <Button
         android:id="@+id/btn_next"
@@ -34,6 +34,7 @@
         android:text="@string/check"
         android:textSize="@dimen/BtnTextSize"
         android:backgroundTint="@color/btn"
+        android:textColor="@color/bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -57,6 +58,7 @@
             android:layout_height="wrap_content"
             android:text="(eq)"
             android:textSize="32sp"
+            android:textColor="@color/text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -68,6 +70,7 @@
             android:ems="10"
             android:hint="@string/min_root"
             android:inputType="numberSigned"
+            android:textColor="@color/text_color"
             android:textSize="@dimen/textSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -81,6 +84,7 @@
             android:ems="10"
             android:hint="@string/max_root"
             android:inputType="numberSigned"
+            android:textColor="@color/text_color"
             android:textSize="@dimen/textSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -88,15 +92,16 @@
             app:layout_constraintTop_toBottomOf="@+id/minX" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <ImageView
         android:id="@+id/btn_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="#49EBA5"
-        android:clickable="true"
+        android:foregroundGravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+        app:tint="@color/text_color" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

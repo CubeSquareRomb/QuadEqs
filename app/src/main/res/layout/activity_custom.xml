@@ -18,6 +18,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/btn"
+        android:textColor="@color/bg"
         android:text="@string/play"
         android:textSize="@dimen/BtnTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,11 +33,13 @@
         android:layout_marginTop="20dp"
         android:text="@string/custom"
         android:textSize="40dp"
+        android:textColor="@color/text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -51,12 +54,13 @@
             android:id="@+id/minA"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
             android:ems="10"
             android:hint="@string/min"
             android:inputType="numberSigned"
             android:textSize="@dimen/textSize"
-            app:layout_constraintEnd_toStartOf="@+id/maxA"
-            app:layout_constraintTop_toBottomOf="@+id/minX" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <EditText
             android:id="@+id/minX"
@@ -65,9 +69,10 @@
             android:ems="10"
             android:hint="@string/min"
             android:inputType="numberSigned"
+            android:textColor="@color/text_color"
             android:textSize="@dimen/textSize"
-            app:layout_constraintEnd_toStartOf="@+id/maxX"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <EditText
             android:id="@+id/maxX"
@@ -76,9 +81,10 @@
             android:ems="10"
             android:hint="@string/max"
             android:inputType="numberSigned"
+            android:textColor="@color/text_color"
             android:textSize="@dimen/textSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/minX"
+            app:layout_constraintTop_toTopOf="@+id/minX" />
 
         <EditText
             android:id="@+id/maxA"
@@ -87,9 +93,42 @@
             android:ems="10"
             android:hint="@string/max"
             android:inputType="numberSigned"
+            android:textColor="@color/text_color"
             android:textSize="@dimen/textSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/maxX" />
+            app:layout_constraintStart_toEndOf="@+id/minA"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:text="@string/root_range"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/text_color"
+            android:text="@string/a_range"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/minX" />
+
+        <EditText
+            android:id="@+id/time_m"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:ems="10"
+            android:hint="m"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
         <EditText
             android:id="@+id/time_s"
@@ -98,52 +137,21 @@
             android:ems="10"
             android:hint="s"
             android:inputType="numberSigned"
+            android:textColor="@color/text_color"
             android:textSize="@dimen/textSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/maxA" />
+            app:layout_constraintStart_toEndOf="@+id/time_m"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Root range"
+            android:layout_marginTop="20dp"
+            android:text="@string/time"
             android:textSize="@dimen/textSize"
-            app:layout_constraintBottom_toTopOf="@+id/minA"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/a_range"
-            android:textSize="@dimen/textSize"
-            app:layout_constraintBottom_toBottomOf="@+id/minA"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/minA"
-            app:layout_constraintVertical_bias="0.5" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Time"
-            android:textSize="@dimen/textSize"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:layout_constraintVertical_bias="0.5" />
-
-        <EditText
-            android:id="@+id/time_m"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="m"
-            android:inputType="number"
-            app:layout_constraintEnd_toStartOf="@+id/time_s"
             app:layout_constraintTop_toBottomOf="@+id/minA" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

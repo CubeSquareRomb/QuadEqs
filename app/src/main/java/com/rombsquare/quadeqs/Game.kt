@@ -8,6 +8,7 @@ import android.os.CountDownTimer
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -56,14 +57,14 @@ class Game : AppCompatActivity() {
             if (maxX == null) {maxX = 10}
             if (minA == null) {minA = 1}
             if (maxA == null) {maxA = 1}
-            if (time == null) {time = 120}
 
-            eq = IntEq(diff!!, minX!!, maxX!!, minA!!, maxA!!)
+            val prefs = getSharedPreferences("QuadEqs", MODE_PRIVATE)
+            val isChecked = prefs.getBoolean("simple_view", true)
 
-//            Toast.makeText(this, time.toString(), Toast.LENGTH_LONG).show()
+            eq = IntEq(diff!!, isChecked, minX!!, maxX!!, minA!!, maxA!!)
         }
 
-        val btnClose: FloatingActionButton = findViewById(R.id.btn_close)
+        val btnClose: ImageView = findViewById(R.id.btn_close)
         val btnNext: Button = findViewById(R.id.btn_next)
         eqText = findViewById(R.id.eq)
         solvedTimeText = findViewById(R.id.title)
@@ -74,7 +75,6 @@ class Game : AppCompatActivity() {
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
                 curTime = (millisUntilFinished / 1000).toInt()
-                solvedTimeText.text = "Time remaining: ${curTime} seconds"
                 updateTexts()
             }
 
@@ -97,14 +97,17 @@ class Game : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     fun updateTexts() {
+        val solvedText = resources.getString(R.string.solved)
+        val time = resources.getString(R.string.time)
         eqText.text = eq.text
-        solvedTimeText.text = "LVL: ${(eq.solved + 1)}\nTime: ${curTime}"
+        solvedTimeText.text = "${solvedText}: ${eq.solved} \n${time}: $curTime"
     }
 
     fun next() {
         val builder = AlertDialog.Builder(this)
 
-        builder.setMessage("Your answer is incorrect")
+        val message = resources.getString(R.string.incorrect)
+        builder.setMessage(message)
 
         builder.setPositiveButton("OK") { dialog, _ ->
             dialog.dismiss()

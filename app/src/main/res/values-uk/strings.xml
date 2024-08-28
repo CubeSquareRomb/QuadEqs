@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="play">Грати</string>
+    <string name="custom">Кастомний</string>
+    <string name="check">Перевірити</string>
+    <string name="max_root">Макс корінь</string>
+    <string name="min_root">Мін корінь</string>
+    <string name="home">На головну</string>
+    <string name="math_game">Математична гра</string>
+    <string name="min">Мін.</string>
+    <string name="max">Макс.</string>
+    <string name="a_range">Діапазон 1ого числа</string>
+    <string name="descr_simple">Рівняння з додатніми коренями. Діапазон коренів: [1, 10]</string>
+    <string name="descr_classic">Класичні рівняння. Діапазон: [-10, 10]</string>
+    <string name="descr_pro">Великі рівняння. Діапазон коренів та першого числа: [-10, 10]</string>
+    <string name="descr_reduced_eq_master">Зведені рівняння з великими числами та з додатними коренями. Діапазон коренів: [1, 30]</string>
+    <string name="descr_reduced_eq_master_2">Зведені рівняння з великими числами. Діапазон коренів: [-30, 30]</string>
+    <string name="descr_growth">" З найлегшого до найскладнішого"</string>
+    <string name="tutorial">Навчання</string>
+    <string name="tut_end_title">Приклад</string>
+
+    <string name="tut_start">Привіт! Це гра вирішення квадратних рівнянь на швидкість. Якщо ви не знаєте як їх вирішувати – нічого страшного! Це дуже просто! Якщо ви знаєте, як вирішувати їх, прочитайте тільки початок навчання. Для вирішення рівняння вам потрібно знати базові арифмемтичні операції та знати, як працювати з від\'ємними числами.
+        \n\nКвадратне рівняння – це один із видів рівнянь. Він має свій алгебраїчний вигляд, але для простоти, рівняння запишемо у вигляді 3-х чисел, наприклад [2, -10, 12] (вигляд рівняння можна змінити на класичний в налаштуваннях).
+        \n\nМета кожного рівняння – знайти його корені (рішення). Ви пройдете 3 кроки щоб їх знайти
+    </string>
+
+    <string name="tut_step1">"Якщо в рівнянні перше число не 1 - треба спростити його, тобто зробити перше число одиницею. Для цього треба поділити кожне число на перше число.</string>
+    <string name="tut_step2">Ми поки що не знаємо корені рівняння, але ми можемо легко знайти їх суму і добуток:
+        \n\nСума дорівнює другому числу з протилежним знаком.
+        \nДобуток дорівнює третьому числу.
+    </string>
+
+    <string name="tut_step3">Ми знаємо суму та добуток коренів. Запишемо їх як a і b відповідно
+        \n\nНам треба скористатися методом перебору. Треба знайти такі 2 числа, щоб вони давали в сумі "a", і одночасно давали добуток "b"
+        \n\nЦі числа є коренями рівняння.</string>
+
+    <string name="tut_end">Візьмемо рівняння [2, -10, 12]
+        \n\nНаше рівняння не спрощене, тоді треба поділити всі числа на перше число, тобто на 2.
+        \n[2, -10, 12] => [2/2, -10/2, 12/2] => [1, -5, 6]
+        \n\nВ нас тепер нове рівняння: [1, -5, 6]
+        \n\nДалі треба знайти суму та добуток коренів, які дорівнюють 5 і 6 відповідно.
+        \n\nЗнаходимо такі 2 такі числа, щоб у сумі давали 5, а добуток давав 6. Перебравши числа, у нас виходять 2 і 3
+        \n\nПеревіряємо: 2 + 3 = 5 та 2 * 3 = 6. І обидва вирази вірні! Тоді корені рівняння: 2 та 3
+        \n\nОтже, удачі вам!
+    </string>
+    <string name="tut_step3_title">Крок 3. Пошук коренів</string>
+    <string name="tut_step2_title">Крок 2: Сума та добуток коренів</string>
+    <string name="tut_step1_title">Крок 1: Спростити рівняння</string>
+    <string name="tut_begin_title">Початок</string>
+    <string name="settings">Налаштування</string>
+    <string name="checkbox_simple_view">Спрощений вигляд рівнянь</string>
+
+    <string-array name="times">
+        <item>30с</item>
+        <item>1м</item>
+        <item>2м</item>
+        <item>5м</item>
+        <item>10м</item>
+    </string-array>
+
+    <string-array name="modes">
+        <item>Простий</item>
+        <item>Класичний</item>
+        <item>Профі</item>
+        <item>Мастер по зведеним рівнянням І</item>
+        <item>Мастер по зведеним рівнянням ІІ</item>
+        <item>Ріст</item>
+    </string-array>
+    <string name="results">Результати</string>
+    <string name="solved">Вирішено</string>
+    <string name="time">Час</string>
+    <string name="incorrect">Твоя відповідь неправильна</string>
+    <string name="solved_eqs">Вирішено</string>
+    <string name="highscore">Рекорд</string>
+    <string name="play_settings">Ігрові налаштування</string>
+    <string name="root_range">Діапазон коренів</string>
+</resources>

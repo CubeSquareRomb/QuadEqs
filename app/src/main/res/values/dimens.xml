@@ -4,4 +4,5 @@
     <dimen name="textSize">20sp</dimen>
     <dimen name="BtnTextSize">16sp</dimen>
     <dimen name="smallerTextSize">16sp</dimen>
+    <dimen name="title_size">28sp</dimen>
 </resources>

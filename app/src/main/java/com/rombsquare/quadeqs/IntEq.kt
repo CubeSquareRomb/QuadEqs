@@ -6,6 +6,7 @@ class IntEq {
     var solved = -1
     var roots = listOf<Int>()
     var eq = listOf<Int>()
+    var simpleMode = false
 
     var minX: Int = 0
     var maxX: Int = 0
@@ -13,8 +14,9 @@ class IntEq {
     var maxA: Int = 0
 
 
-    constructor(diff: String, minX: Int = 0, maxX: Int = 0, minA: Int = 0, maxA: Int = 0) {
+    constructor(diff: String, simpleMode: Boolean = false, minX: Int = 0, maxX: Int = 0, minA: Int = 0, maxA: Int = 0) {
         this.diff = diff
+        this.simpleMode = simpleMode
 
         this.minX = minX
         this.maxX = maxX
@@ -119,7 +121,10 @@ class IntEq {
 
         }
 
-        fun format(eq: List<Int>): String {
+        fun format(eq: List<Int>, simpleMode: Boolean = false): String {
+            if (simpleMode) {
+                return "${eq[0]}   ${eq[1]}   ${eq[2]}"
+            }
             var stringA: String = java.lang.String.valueOf(eq.get(0))
             var stringB: String = java.lang.String.valueOf(eq.get(1))
             val stringC: String = java.lang.String.valueOf(eq.get(2))
@@ -174,7 +179,7 @@ class IntEq {
 
         eq = eqroots[0]
         roots = eqroots[1]
-        text = format(eq)
+        text = format(eq, simpleMode)
 
         solved++
 

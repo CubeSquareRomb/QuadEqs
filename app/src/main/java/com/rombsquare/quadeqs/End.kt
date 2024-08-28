@@ -26,8 +26,9 @@ class End : AppCompatActivity() {
         val statsText: TextView = findViewById(R.id.stats)
 
         val solved = intent.extras!!.getInt("solved").toString()
+        val solvedText = resources.getString(R.string.solved_eqs)
 
-        statsText.text = "Solved equations: ${solved}"
+        statsText.text = "$solvedText: $solved"
 
         btnHome.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

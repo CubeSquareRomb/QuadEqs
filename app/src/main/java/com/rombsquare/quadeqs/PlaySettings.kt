@@ -16,8 +16,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class PlaySettings : AppCompatActivity() {
-    var diff: String = String()
-    var time: Int = 0
+    var diff: String = "simple"
+    var time: Int = 30
 
     private lateinit var highScoreText: TextView
     private lateinit var descrText: TextView
@@ -32,8 +32,14 @@ class PlaySettings : AppCompatActivity() {
             insets
         }
 
-        val diffs = listOf("Simple", "Classic", "Advanced", "Pro", "Reduced Master 1", "Reduced Master 2", "Growth")
-        val times = listOf("30s", "1m", "2m", "5m", "10m")
+//        val diffs = listOf("Simple", "Classic", "Advanced", "Pro", "Reduced Master 1", "Reduced Master 2", "Growth")
+//        val times = listOf("30s", "1m", "2m", "5m", "10m")
+
+        val diffs = resources.getStringArray(R.array.modes)
+        val times = resources.getStringArray(R.array.times)
+
+        val diffs_technical_names = listOf("simple", "classic", "pro", "reduced_eq_master", "reduced_eq_master_2", "growth")
+        val times_technical_names = listOf(30, 60, 120, 300, 600)
 
         val diff_adapter = ArrayAdapter(this, R.layout.spinner_item, diffs)
         diff_adapter.setDropDownViewResource(R.layout.spinner_menu)
@@ -51,8 +57,7 @@ class PlaySettings : AppCompatActivity() {
 
         diffSpin.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                diff = convertDiff(diffSpin.selectedItem.toString())
-                time = convertTime(timeSpin.selectedItem.toString())
+                diff = diffs_technical_names[position]
                 showHighScore()
                 updateDescr()
             }
@@ -64,8 +69,7 @@ class PlaySettings : AppCompatActivity() {
 
         timeSpin.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                diff = convertDiff(diffSpin.selectedItem.toString())
-                time = convertTime(timeSpin.selectedItem.toString())
+                time = times_technical_names[position]
                 showHighScore()
                 updateDescr()
             }
@@ -92,34 +96,7 @@ class PlaySettings : AppCompatActivity() {
 
     }
 
-    fun convertDiff(diff: String): String {
-        return when (diff) {
-            "Simple" -> "simple"
-            "Classic" -> "classic"
-            "Advanced" -> "advanced"
-            "Pro" -> "pro"
-            "Reduced Master 1" -> "reduced_master_1"
-            "Reduced Master 2" -> "reduced_master_2"
-            "Senior 1" -> "senior_1"
-            "Senior 2" -> "senior_2"
-            "Growth" -> "growth"
-            else -> "classic"
-        }
-    }
-
-    fun convertTime(time: String): Int {
-        return when (time) {
-            "30s" -> {30}
-            "1m" -> {60}
-            "2m" -> {120}
-            "5m" -> {300}
-            "10m" -> {600}
-
-            else -> { time.toInt() }
-        }
-    }
-
-    fun getHighScore(): Int {
+    private fun getHighScore(): Int {
         val sharedPrefs = getSharedPreferences("QuadEqs", MODE_PRIVATE)
 
         val name = "$diff-$time"
@@ -129,7 +106,8 @@ class PlaySettings : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     fun showHighScore() {
-        highScoreText.text = "Highscore: ${getHighScore()}"
+        val highscoreText = resources.getString(R.string.highscore)
+        highScoreText.text = "$highscoreText: ${getHighScore()}"
     }
 
     @SuppressLint("SetTextI18n")

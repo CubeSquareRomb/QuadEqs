@@ -1,23 +1,81 @@
 <resources>
-    <string name="app_name">Equadratic</string>
+    <string name="app_name" translatable="false">Equadrat</string>
     <string name="play">Play</string>
     <string name="custom">Custom</string>
     <string name="check">Check</string>
     <string name="max_root">Max root</string>
     <string name="min_root">Min root</string>
     <string name="home">Home</string>
-
-    <string name="descr_simple">Equations with positive roots. Root range: [1, 10]</string>
-    <string name="descr_classic">Classic equations. Root range: [-10, 10]</string>
-    <string name="descr_advanced">Equations with senior coefficient. Root range: [-10, 10], senior coeff range: [-3, 3]</string>
-    <string name="descr_pro">Huge equations. Root range: [-10, 10], senior coeff range: [-10, 10]</string>
-    <string name="descr_reduced_master_1">Reduced equations with positive roots but huge numbers. Root range: [1, 20]</string>
-    <string name="descr_reduced_master_2">Reduced equations with positive and negative roots but huge numbers. Root range: [-20, 20]</string>
-
-    <string name="descr_growth">From easier equations to harder</string>
     <string name="math_game">Math Game</string>
     <string name="min">Min</string>
     <string name="max">Max</string>
-    <string name="a_range">\"A\" coeff range</string>
+    <string name="a_range">First num range</string>
+
+    <string name="descr_simple">Equations with positive roots. Root range: [1, 10]</string>
+    <string name="descr_classic">Classic equations. Root range: [-10, 10]</string>
+    <string name="descr_pro">Huge equations. Root range: [-10, 10], senior coeff range: [-10, 10]</string>
+    <string name="descr_reduced_eq_master">Reduced equations with positive roots but huge numbers. Root range: [1, 20]</string>
+    <string name="descr_reduced_eq_master_2">Reduced equations with positive and negative roots but huge numbers. Root range: [-20, 20]</string>
+    <string name="descr_growth">From easier equations to harder</string>
+
     <string name="tutorial">Tutorial</string>
+
+    <string name="tut_start">Hello! This is a game about solving quadratic equations for speed. If you don\'t know how to solve them - no problem! It\'s very easy! If you already know how to solve them, read only the beginning of the tutorial. To solve the equation, you need to know basic arithmetic operations and know how to work with negative numbers.
+    \n\nA quadratic equation is one of the types of equations. It has its own algebraic form, but for simplicity, we will write the equation as 3 numbers, for example [2, -10, 12] (the equation type can be changed to the classic one in the settings).
+    \n\nThe goal of each equation is to find 2 roots (solutions). You will go through 3 steps to find them</string>
+    <string name="tut_step1">If the first number in the equation is not 1, you need to simplify it, that is, make the first number one. To do this, divide each number by the first number.</string>
+
+    <string name="tut_step2">We don\'t know the roots of the equation yet, but we can easily find their sum and product:
+    \n\nThe sum is equal to the second number with the opposite sign.
+    \nThe product is equal to the third number.
+    </string>
+
+    <string name="tut_step3">We know the sum and product of the roots. Let\'s write them as a and b respectively
+    \n\nWe need to use the trial and error method. We need to find two numbers that give "a" in the sum, and at the same time give "b" in the product
+    \n\nThese numbers are the roots of the equation.
+    </string>
+
+    <string name="tut_end">Let\'s take the equation [2, -10, 12]
+    \n\nOur equation is not simplified, then we need to divide all the numbers by the first number, that is, by 2.
+    \n[2, -10, 12] => [2/2, -10/2, 12/2] => [1, -5, 6]
+    \n\nWe now have a new equation: [1, -5, 6]
+    \n\nNext, we need to find the sum and the product of the roots, which are equal to 5 and 6, respectively.
+    \n\nNow, we find 2 such numbers so that the sum gives 5, and the product gives 6. After trying different numbers, we get 2 and 3
+    \n\nWe check: 2 + 3 = 5 and 2 * 3 = 6. And both expressions are correct! Then the roots of the equation are: 2 and 3.
+    \n\nSo good luck to you!
+    </string>
+
+    <string name="tut_end_title">Example</string>
+    <string name="tut_step3_title">Step 3: Find roots</string>
+    <string name="tut_step2_title">Step 2: Sum and product of the roots</string>
+    <string name="tut_step1_title">Step 1: Reduce equation</string>
+    <string name="tut_begin_title">Begin</string>
+
+    <string name="settings">Settings</string>
+    <string name="checkbox_simple_view">Simple view of equations</string>
+    <string name="results">Results</string>
+    <string name="solved">Solved</string>
+    <string name="time">Time</string>
+
+    <string-array name="times">
+        <item>30s</item>
+        <item>1m</item>
+        <item>2m</item>
+        <item>5m</item>
+        <item>10m</item>
+    </string-array>
+
+    <string-array name="modes">
+        <item>Simple</item>
+        <item>Classic</item>
+        <item>Pro</item>
+        <item>Reduced equation master I</item>
+        <item>Reduced equation master II</item>
+        <item>Growth</item>
+    </string-array>
+    <string name="incorrect">Your answer is incorrect</string>
+    <string name="solved_eqs">Solved equations</string>
+    <string name="highscore">Highscore</string>
+    <string name="play_settings">Play Settings</string>
+    <string name="root_range">Root range</string>
 </resources>

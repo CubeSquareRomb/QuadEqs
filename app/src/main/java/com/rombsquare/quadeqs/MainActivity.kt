@@ -28,11 +28,13 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        eq = IntEq("advanced")
+        eq = IntEq("pro")
 
         val button1: Button = findViewById(R.id.btn_next)
         val button2: Button = findViewById(R.id.btn_tut)
+        val button3: Button = findViewById(R.id.btn_sett)
         val eqText: TextView = findViewById(R.id.eq)
+
         button1.setOnClickListener {
             val intent = Intent(this, PlaySettings::class.java)
             startActivity(intent)
@@ -43,14 +45,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        handler = Handler(Looper.getMainLooper())
-        var i = 0
+        button3.setOnClickListener {
+            val intent = Intent(this, Settings::class.java)
+            startActivity(intent)
+        }
 
+        handler = Handler(Looper.getMainLooper())
         val eqAnim = object : Runnable {
             override fun run() {
                 eq.next()
                 eqText.text = eq.text
-//                Toast.makeText(this@MainActivity, eq.text, Toast.LENGTH_LONG).show()
                 handler.postDelayed(this, 1000)
             }
         }

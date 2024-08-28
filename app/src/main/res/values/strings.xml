@@ -52,7 +52,7 @@
     <string name="tut_begin_title">Begin</string>
 
     <string name="settings">Settings</string>
-    <string name="checkbox_simple_view">Simple view of equations</string>
+    <string name="checkbox_simple_view">Classic view of equations</string>
     <string name="results">Results</string>
     <string name="solved">Solved</string>
     <string name="time">Time</string>

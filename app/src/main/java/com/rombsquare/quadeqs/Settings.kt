@@ -36,7 +36,7 @@ class Settings : AppCompatActivity() {
 
         isChecked = prefs.getBoolean("simple_view", true)
 
-        checkBox.isChecked = isChecked
+        checkBox.isChecked = !isChecked
 
         checkBox.setOnClickListener {
             val editor = prefs.edit()

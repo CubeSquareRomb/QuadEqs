@@ -48,7 +48,7 @@
     <string name="tut_step1_title">Крок 1: Спростити рівняння</string>
     <string name="tut_begin_title">Початок</string>
     <string name="settings">Налаштування</string>
-    <string name="checkbox_simple_view">Спрощений вигляд рівнянь</string>
+    <string name="checkbox_simple_view">Класичний вигляд рівнянь</string>
 
     <string-array name="times">
         <item>30с</item>

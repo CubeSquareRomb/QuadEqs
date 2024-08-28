@@ -4,5 +4,6 @@
     android:layout_height="wrap_content"
     android:padding="8dp"
     android:textColor="@color/text_color"
+    android:backgroundTint="@color/spinner_bg"
     android:background="@drawable/spinner_bg"
     android:textSize="18sp"/>

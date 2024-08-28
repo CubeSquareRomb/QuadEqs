@@ -100,7 +100,8 @@ class Game : AppCompatActivity() {
         val solvedText = resources.getString(R.string.solved)
         val time = resources.getString(R.string.time)
         eqText.text = eq.text
-        solvedTimeText.text = "${solvedText}: ${eq.solved} \n${time}: $curTime"
+
+        solvedTimeText.text = "${solvedText}: ${eq.solved} \n${time}: ${convertTime(curTime)}"
     }
 
     fun next() {
@@ -148,6 +149,16 @@ class Game : AppCompatActivity() {
         val intent = Intent(this, End::class.java)
         intent.putExtra("solved", eq.solved)
         startActivity(intent)
+    }
+
+    fun convertTime(seconds: Int): String {
+        val s = seconds % 60
+        val m = seconds / 60
+
+        val sText = resources.getString(R.string.s)
+        val mText = resources.getString(R.string.m)
+
+        return ("${m}${mText} ${s}${sText}")
     }
 
     override fun onBackPressed() {

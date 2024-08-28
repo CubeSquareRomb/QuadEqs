@@ -2,6 +2,7 @@
 <resources>
     <color name="text_color">#E0E0E0</color>
     <color name="bg">#161616</color>
+    <color name="spinner_bg">#2F2F2F</color>
     <color name="btn">#43FFA4</color>
     <color name="input">#43FFA4</color>
 </resources>

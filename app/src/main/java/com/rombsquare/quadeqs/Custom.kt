@@ -26,7 +26,7 @@ class Custom : AppCompatActivity() {
         val minA_Input: EditText = findViewById(R.id.minA)
         val maxA_Input: EditText = findViewById(R.id.maxA)
         val mTimeInput: EditText = findViewById(R.id.time_m)
-        val sTimeInput: EditText = findViewById(R.id.maxX)
+        val sTimeInput: EditText = findViewById(R.id.time_s)
         val btn_play: Button = findViewById(R.id.btn_next)
 
         btn_play.setOnClickListener {
@@ -37,10 +37,10 @@ class Custom : AppCompatActivity() {
             val minA = if (minA_Input.text.toString().isEmpty()) {1} else {minA_Input.text.toString().toInt()}
             val maxA = if (maxA_Input.text.toString().isEmpty()) {1} else {maxA_Input.text.toString().toInt()}
             val m = if (mTimeInput.text.toString().isEmpty()) {0} else {mTimeInput.text.toString().toInt()}
-            val s = if (mTimeInput.text.toString().isEmpty()) {0} else {sTimeInput.text.toString().toInt()}
+            val s = if (sTimeInput.text.toString().isEmpty()) {0} else {sTimeInput.text.toString().toInt()}
 
             var time = m*60 + s // In seconds
-            if (time == 0) {time = 120}
+            if (time <= 0) {time = 120}
 
             val intent = Intent(this, Game::class.java)
 

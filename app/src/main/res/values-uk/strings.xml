@@ -11,10 +11,10 @@
     <string name="max">Макс.</string>
     <string name="a_range">Діапазон 1ого числа</string>
     <string name="descr_simple">Рівняння з додатніми коренями. Діапазон коренів: [1, 10]</string>
-    <string name="descr_classic">Класичні рівняння. Діапазон: [-10, 10]</string>
+    <string name="descr_classic">Класичні рівняння. Діапазон коренів: [-10, 10]</string>
     <string name="descr_pro">Великі рівняння. Діапазон коренів та першого числа: [-10, 10]</string>
-    <string name="descr_reduced_eq_master">Зведені рівняння з великими числами та з додатними коренями. Діапазон коренів: [1, 30]</string>
-    <string name="descr_reduced_eq_master_2">Зведені рівняння з великими числами. Діапазон коренів: [-30, 30]</string>
+    <string name="descr_reduced_eq_master">Упрощені рівняння з великими числами та з додатними коренями. Діапазон коренів: [1, 30]</string>
+    <string name="descr_reduced_eq_master_2">Упрощені рівняння з великими числами. Діапазон коренів: [-30, 30]</string>
     <string name="descr_growth">" З найлегшого до найскладнішого"</string>
     <string name="tutorial">Навчання</string>
     <string name="tut_end_title">Приклад</string>
@@ -62,8 +62,8 @@
         <item>Простий</item>
         <item>Класичний</item>
         <item>Профі</item>
-        <item>Мастер по зведеним рівнянням І</item>
-        <item>Мастер по зведеним рівнянням ІІ</item>
+        <item>Майстер по спрощеним рівнянням І</item>
+        <item>Майстер по спрощеним рівнянням ІІ</item>
         <item>Ріст</item>
     </string-array>
     <string name="results">Результати</string>

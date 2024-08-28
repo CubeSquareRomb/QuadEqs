@@ -55,6 +55,8 @@ class PlaySettings : AppCompatActivity() {
         diffSpin.adapter = diff_adapter
         timeSpin.adapter = time_adapter
 
+        timeSpin.setSelection(2)
+
         diffSpin.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 diff = diffs_technical_names[position]

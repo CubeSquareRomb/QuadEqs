@@ -40,7 +40,7 @@ class Settings : AppCompatActivity() {
 
         checkBox.setOnClickListener {
             val editor = prefs.edit()
-            editor.putBoolean("simple_view", checkBox.isChecked)
+            editor.putBoolean("simple_view", !checkBox.isChecked)
             editor.apply()
         }
     }

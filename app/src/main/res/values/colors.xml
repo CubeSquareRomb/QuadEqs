@@ -3,4 +3,5 @@
     <color name="text_color">#141414</color>
     <color name="bg">#FFFFFFFF</color>
     <color name="btn">#00bd6b</color>
+    <color name="input">#000</color>
 </resources>

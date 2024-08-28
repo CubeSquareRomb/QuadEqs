@@ -74,4 +74,6 @@
     <string name="highscore">Рекорд</string>
     <string name="play_settings">Ігрові налаштування</string>
     <string name="root_range">Діапазон коренів</string>
+    <string name="m">м</string>
+    <string name="s">с</string>
 </resources>

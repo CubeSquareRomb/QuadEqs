@@ -78,4 +78,6 @@
     <string name="highscore">Highscore</string>
     <string name="play_settings">Play Settings</string>
     <string name="root_range">Root range</string>
+    <string name="m">m</string>
+    <string name="s">s</string>
 </resources>

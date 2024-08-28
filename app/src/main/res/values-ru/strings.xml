@@ -74,4 +74,6 @@
     <string name="highscore">Рекорд</string>
     <string name="play_settings">Игровые настройки</string>
     <string name="root_range">Интервал корней</string>
+    <string name="m">м</string>
+    <string name="s">с</string>
 </resources>

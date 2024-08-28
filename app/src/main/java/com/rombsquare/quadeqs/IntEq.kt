@@ -91,12 +91,12 @@ class IntEq {
                     maxA = 10
                 }
 
-                "reduced_master_1" -> {
+                "reduced_eq_master" -> {
                     minRoot = 1
                     maxRoot = 20
                 }
 
-                "reduced_master_2" -> {
+                "reduced_eq_master_2" -> {
                     minRoot = -20
                     maxRoot = 20
                 }

@@ -65,6 +65,7 @@
         <item>Мастер по сведеныи уравнениям ІІ</item>
         <item>Рост</item>
     </string-array>
+
     <string name="results">Результаты</string>
     <string name="solved">Решено</string>
     <string name="time">Время</string>

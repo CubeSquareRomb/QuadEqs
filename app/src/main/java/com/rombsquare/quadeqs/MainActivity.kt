@@ -28,28 +28,34 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // Equation generator for animation
         eq = IntEq("pro")
 
+        // Get components
         val button1: Button = findViewById(R.id.btn_next)
         val button2: Button = findViewById(R.id.btn_tut)
         val button3: Button = findViewById(R.id.btn_sett)
         val eqText: TextView = findViewById(R.id.eq)
 
+        // If play button is clicked
         button1.setOnClickListener {
             val intent = Intent(this, PlaySettings::class.java)
             startActivity(intent)
         }
 
+        // If tutorial button is clicked
         button2.setOnClickListener {
             val intent = Intent(this, Tutorial::class.java)
             startActivity(intent)
         }
 
+        // If settings button is clicked
         button3.setOnClickListener {
             val intent = Intent(this, Settings::class.java)
             startActivity(intent)
         }
 
+        // Equation animation
         handler = Handler(Looper.getMainLooper())
         val eqAnim = object : Runnable {
             override fun run() {
@@ -58,13 +64,13 @@ class MainActivity : AppCompatActivity() {
                 handler.postDelayed(this, 1000)
             }
         }
-
         handler.post(eqAnim)
 
 
 
     }
 
+    // Stop animation after leaving from MainActivity
     override fun onDestroy() {
         super.onDestroy()
         handler.removeCallbacksAndMessages(null) // Stop the handler callbacks when the activity is destroyed

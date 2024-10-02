@@ -1,19 +1,20 @@
 import kotlin.random.Random
 
+// This class generates quadratic equation with integer roots and coefficients & constant
 class IntEq {
-    var diff = "medium"
-    var text = ""
-    var solved = -1
-    var roots = listOf<Int>()
-    var eq = listOf<Int>()
-    var simpleMode = false
+    // Initialize the data
+    var diff = "medium" // Difficulty
+    var text = "" // Used for formatted equation
+    var solved = -1 // Total solved equations. When IntEq initalized, solved is 0
+    var roots = listOf<Int>() // Roots after equation generation
+    var eq = listOf<Int>() // Equation's coefficients and constant
+    var simpleMode = false // Simple mode
+    var minX: Int = 0 // Min root
+    var maxX: Int = 0 // Max root
+    var minA: Int = 0 // Min senior coeff
+    var maxA: Int = 0 // Max senior coeff
 
-    var minX: Int = 0
-    var maxX: Int = 0
-    var minA: Int = 0
-    var maxA: Int = 0
-
-
+    // IntEq settings
     constructor(diff: String, simpleMode: Boolean = false, minX: Int = 0, maxX: Int = 0, minA: Int = 0, maxA: Int = 0) {
         this.diff = diff
         this.simpleMode = simpleMode
@@ -23,10 +24,12 @@ class IntEq {
         this.minA = minA
         this.maxA = maxA
 
+        // Initialize equation
         next()
     }
 
     companion object {
+        // iqeq = integer quadratic equation. Generate equation by roots
         fun iqeqByRoots(x1: Int, x2: Int, a: Int = 1): List<List<Int>> {
             val b = (x1 + x2) * -a
             val c = x1 * x2 * a
@@ -34,11 +37,15 @@ class IntEq {
             return listOf(listOf(a, b, c), listOf(x1, x2))
         }
 
+        // Generate random equation by root and senior coeff range
         fun randomIqeq(minRoot: Int, maxRoot: Int, minA: Int = 1, maxA: Int = 1): List<List<Int>> {
+            // Initialize data
             var x1 = 0
             var x2 = 0
             var a = 0
 
+            // If min root equals to the max root, both roots are min root.
+            // Else: generate random roots
             if (minRoot == maxRoot) {
                 x1 = minRoot
                 x2 = minRoot
@@ -47,20 +54,26 @@ class IntEq {
                 x2 = Random.nextInt(minRoot, maxRoot)
             }
 
+            // If min and max senior coeffs are the same, senior coeff is min senior coeff
+            // Else: generate random
             if (minA == maxA) {
                 a = minA
             } else {
                 a = Random.nextInt(minA, maxA)
             }
 
+            // If senior coeff is 0, his value is 1
             if (a == 0) {
                 a = 1
             }
 
+            // Return and generate equation by roots and senior coeff
             return iqeqByRoots(x1, x2, a)
         }
 
+        // Generate equation by difficulty
         fun genIqeqByDiff(diff: String): List<List<Int>> {
+            // Initialize the data
             var minRoot = 0
             var maxRoot = 0
             var minA = 1
@@ -102,10 +115,13 @@ class IntEq {
                 }
             }
 
+            // Generate random equation
             return randomIqeq(minRoot, maxRoot, minA, maxA)
         }
 
+        // Generate equation for growth mode
         fun genIqeqGrowth(solved: Int): List<List<Int>> {
+            // Formulas for root range
             var minX = -2 - solved/2
             var maxX = 2 + solved/2
 
@@ -121,6 +137,7 @@ class IntEq {
 
         }
 
+        // Format equation
         fun format(eq: List<Int>, simpleMode: Boolean = false): String {
             if (simpleMode) {
                 return "${eq[0]}   ${eq[1]}   ${eq[2]}"
@@ -158,15 +175,20 @@ class IntEq {
 
     }
 
+    // Generate a custom equation
     fun genCustom(): List<List<Int>> {
         return randomIqeq(minX, maxX, minA, maxA)
     }
 
+    // Next level event
     fun next(userRoots: List<Int> = emptyList()): Int {
+        // If next() doesn't called after IntEq initialization and user roots are incorrect and empty:
+        // Return -1 (error)
         if (solved != -1 && userRoots != roots.sorted() && userRoots != emptyList<Int>()) {
             return -1
         }
 
+        // List of equation's coeffs & constant and roots
         var eqroots: List<List<Int>> = emptyList()
 
         if (diff == "growth") {
@@ -185,18 +207,4 @@ class IntEq {
 
         return 0
     }
-
-    fun nextWithoutRoots(): Int {
-        return next(roots)
-    }
-}
-
-fun main() {
-    val eq = IntEq("hard")
-
-    println(eq.eq)
-
-    eq.next(eq.roots)
-
-    println(eq.eq)
 }

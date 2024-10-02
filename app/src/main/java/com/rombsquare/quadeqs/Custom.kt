@@ -20,15 +20,16 @@ class Custom : AppCompatActivity() {
             insets
         }
 
-        // Import components
-        val minX_Input: EditText = findViewById(R.id.minX)
-        val maxX_Input: EditText = findViewById(R.id.maxX)
-        val minA_Input: EditText = findViewById(R.id.minA)
-        val maxA_Input: EditText = findViewById(R.id.maxA)
-        val mTimeInput: EditText = findViewById(R.id.time_m)
-        val sTimeInput: EditText = findViewById(R.id.time_s)
-        val btn_play: Button = findViewById(R.id.btn_next)
+        // Get components
+        val minX_Input: EditText = findViewById(R.id.minX) // Min root input
+        val maxX_Input: EditText = findViewById(R.id.maxX) // Max root input
+        val minA_Input: EditText = findViewById(R.id.minA) // Min senior coeff input
+        val maxA_Input: EditText = findViewById(R.id.maxA) // Max senior coeff input
+        val mTimeInput: EditText = findViewById(R.id.time_m) // Minutes input
+        val sTimeInput: EditText = findViewById(R.id.time_s) // Seconds input
+        val btn_play: Button = findViewById(R.id.btn_next) // Play button
 
+        // On play button:
         btn_play.setOnClickListener {
 
             // Import data from inputs
@@ -39,11 +40,12 @@ class Custom : AppCompatActivity() {
             val m = if (mTimeInput.text.toString().isEmpty()) {0} else {mTimeInput.text.toString().toInt()}
             val s = if (sTimeInput.text.toString().isEmpty()) {0} else {sTimeInput.text.toString().toInt()}
 
-            var time = m*60 + s // In seconds
-            if (time <= 0) {time = 120}
+            var time = m*60 + s // Convert to seconds
+            if (time <= 0) {time = 120} // If total seconds is less or equal to 0, change to 120 sec (2 min)
 
             val intent = Intent(this, Game::class.java)
 
+            // Saves custom game parameters for the game
             intent.putExtra("diff", "custom")
             intent.putExtra("minX", minX)
             intent.putExtra("maxX", maxX)

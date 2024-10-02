@@ -23,6 +23,7 @@ class Tutorial : AppCompatActivity() {
             insets
         }
 
+        // Home button listener
         val button: Button = findViewById(R.id.home)
         button.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

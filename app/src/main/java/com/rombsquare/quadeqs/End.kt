@@ -22,20 +22,25 @@ class End : AppCompatActivity() {
             insets
         }
 
+        // Get components
         val btnHome: Button = findViewById(R.id.home)
         val statsText: TextView = findViewById(R.id.stats)
 
+        // Get the count of solved equations
         val solved = intent.extras!!.getInt("solved").toString()
         val solvedText = resources.getString(R.string.solved_eqs)
 
+        // Show stats
         statsText.text = "$solvedText: $solved"
 
+        // To main menu:
         btnHome.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }
 
+    // Back navigation button is disabled
     override fun onBackPressed() {
 
     }

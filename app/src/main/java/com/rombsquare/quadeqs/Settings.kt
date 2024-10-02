@@ -24,20 +24,23 @@ class Settings : AppCompatActivity() {
             insets
         }
 
+        // Get components
         val button: Button = findViewById(R.id.home)
+        val checkBox: CheckBox = findViewById(R.id.simpleModeCheckBox)
+
+        // Home button listener
         button.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        val checkBox: CheckBox = findViewById(R.id.simpleModeCheckBox)
-
         val prefs = getSharedPreferences("QuadEqs", MODE_PRIVATE)
 
+        // Get "is simple view of equation?" parameter
         isChecked = prefs.getBoolean("simple_view", true)
-
         checkBox.isChecked = !isChecked
 
+        // If checkbox is clicked, save simple view parameter to device
         checkBox.setOnClickListener {
             val editor = prefs.edit()
             editor.putBoolean("simple_view", !checkBox.isChecked)
